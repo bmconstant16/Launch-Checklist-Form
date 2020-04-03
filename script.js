@@ -13,7 +13,7 @@
 */
 
 window.addEventListener('load', function() {
-   this.alert("Page loaded");
+   //this.alert("Page loaded");
 
    // get the planet JSON files
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
