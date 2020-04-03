@@ -38,9 +38,6 @@ window.addEventListener('load', function() {
    //submit form event listener function
    form.addEventListener("submit", function(event) { 
       
-      //alert("pilot is " + pilotName.value);
-       // alert(`${pilotName.value} ready.`)
-      
        // input items to ref the DOM here
       let pilotName = document.querySelector("input[name=pilotName]");
       let coPilotName = document.querySelector("input[name=copilotName]");
@@ -57,7 +54,7 @@ window.addEventListener('load', function() {
       let copilotStatus = document.getElementById("copilotStatus");
       let cargoStatus = document.getElementById("cargoStatus");
 
-
+      //check user input before form submission
       if (pilotName.value === "" || coPilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required!");
          // stop the form submission
@@ -73,6 +70,8 @@ window.addEventListener('load', function() {
          copilotStatus.innerHTML = `Co-Pilot ${coPilotName.value} ready.`;
       }
 
+
+      // check user input values of fuel and cargo to update faulty Items
       if (fuelLevel.value < 10000) {
          faultyItems.style.visibility = 'visible';
          launchStatus.style.color = 'red';
